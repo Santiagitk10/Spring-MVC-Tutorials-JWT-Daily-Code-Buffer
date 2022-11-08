@@ -15,7 +15,9 @@ public class UserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
         //Logic to get the user form the Database
+        //No se tiene repositorio, solo se está devolviendo un usuario dummy
 
+        //User de spring security
         return new User("admin","password",new ArrayList<>());
     }
 }

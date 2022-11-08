@@ -19,3 +19,11 @@ public class JwtDemoApplication {
 	}
 
 }
+
+
+// Tuturial
+// https://www.youtube.com/watch?v=lA18U8dGKF8
+
+
+//Spring Security tira un formulario default a la dirección de /login para que se pueda
+//autenticar. Una vez se ingresen los datos redirige a la página principal

@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
+    //Este es el servicio que se encarga de traer la información de usuarios de la base de datos
     @Autowired
     private UserService userService;
 
@@ -29,12 +30,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         auth.userDetailsService(userService);
     }
 
+    //Bean para que funcione el el AuthenticationManager
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
+    //La Ruta /authenticate es la única que va a poder pasar sin el token ya que aquí es 
+    //donde se toman las credenciales para generarlo. De resto anaRequest diferente a este
+    //debe estar autenticado
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf()

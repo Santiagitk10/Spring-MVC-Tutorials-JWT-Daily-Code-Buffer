@@ -13,13 +13,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
+//Contiene los comportamientos del JWT
 @Component
 public class JWTUtility implements Serializable {
+
 
     private static final long serialVersionUID = 234234523523L;
 
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
+    //la secret key se está obteniendo del .yml
     @Value("${jwt.secret}")
     private String secretKey;
 

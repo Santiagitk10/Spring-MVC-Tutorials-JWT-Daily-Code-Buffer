@@ -35,6 +35,7 @@ public class HomeController {
     public JwtResponse authenticate(@RequestBody JwtRequest jwtRequest) throws Exception{
 
         try {
+            //authentica se encarga de autenticar como tal
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             jwtRequest.getUsername(),
